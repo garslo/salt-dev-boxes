@@ -6,3 +6,4 @@ core_packages:
       - tmux
       - virtualenv
       - jq
+      - vpnc
