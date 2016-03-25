@@ -5,3 +5,4 @@ core_packages:
       - vim
       - tmux
       - virtualenv
+      - jq
