@@ -52,6 +52,8 @@ def workspace(name, packages=[]):
     all_changes = {}
     try:
         for package in packages:
+            if __salt__['go.package_exists'](name, package):
+                continue
             log.debug('Beginning go get %s', package)
             ret = _go_get(name, package)
             log.debug('go get %s returned %s', package, str(ret))

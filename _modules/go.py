@@ -4,3 +4,7 @@ def get(gopath, repo):
 
 def build(gopath, package):
     return __salt__['cmd.retcode']('go build {0}'.format(package), env={'GOPATH': gopath})
+
+
+def package_exists(gopath, package):
+    return __salt__['cmd.retcode']('go list {0}'.format(package), env={'GOPATH': gopath}) == 0
